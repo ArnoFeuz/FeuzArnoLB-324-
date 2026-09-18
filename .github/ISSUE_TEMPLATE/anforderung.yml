@@ -1,0 +1,83 @@
+name: Neue Anforderung
+description: Anforderung an das Tagebbbuch-System im vorgegebenen Format festhalten
+title: "[Anforderung]: "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Bitte formuliere die Anforderung nach dem Schema:
+        **Zielsystem + Priorität + Systemaktivität + allf. Ergänzungen + Funktionalität + Bedingungen**
+
+        Beispiel: *Reflect Media Player (Zielsystem) muss (= hohe Priorität) dem Benutzer die
+        Möglichkeit bieten (= Benutzerinteraktion), J3D Szenengraphen aus einer wrml-Datei über
+        das Netzwerk (Ergänzung) zu laden (Funktionalität), falls der Benutzer eingeschrieben ist.*
+
+  - type: input
+    id: zielsystem
+    attributes:
+      label: Zielsystem
+      description: Welches (Teil-)System ist betroffen?
+      placeholder: "z. B. Tagebbbuch-Applikation, Login-Modul, ..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: prioritaet
+    attributes:
+      label: Priorität
+      description: "muss = hoch, soll = mittel, wird = niedrig"
+      options:
+        - "muss (hohe Priorität)"
+        - "soll (mittlere Priorität)"
+        - "wird (niedrige Priorität)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: systemaktivitaet
+    attributes:
+      label: Systemaktivität
+      description: >
+        Handelt das System selbständig, bietet es dem Benutzer eine Funktion an,
+        oder braucht es eine Schnittstelle?
+      options:
+        - "handelt selbständig"
+        - "dem Administrator o. ä. die Möglichkeit bieten (Benutzerfunktion)"
+        - "fähig sein (Schnittstellenanforderung)"
+    validations:
+      required: true
+
+  - type: input
+    id: ergaenzungen
+    attributes:
+      label: Allfällige Ergänzungen
+      description: Zusätzliche Angaben zum Objekt/Kontext der Funktionalität
+      placeholder: "z. B. über das Netzwerk, aus einer Datei, ..."
+
+  - type: textarea
+    id: funktionalitaet
+    attributes:
+      label: Funktionalität
+      description: Was genau soll getan werden können?
+    validations:
+      required: true
+
+  - type: input
+    id: bedingungen
+    attributes:
+      label: Bedingungen
+      description: "Zeitlich mit 'wenn', logisch mit 'falls'"
+      placeholder: "z. B. falls der Benutzer eingeloggt ist"
+
+  - type: textarea
+    id: zusammenfassung
+    attributes:
+      label: Vollständige Anforderung (ein Satz)
+      description: Setze die obigen Angaben zu einem Satz zusammen.
+      placeholder: >
+        Tagebbbuch (Zielsystem) muss (hohe Priorität) dem Benutzer die Möglichkeit
+        bieten (Benutzerfunktion), Einträge zu bewerten (Funktionalität), falls er
+        eingeloggt ist (Bedingung).
+    validations:
+      required: true
