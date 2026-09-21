@@ -16,3 +16,11 @@ Erklären Sie hier, wie man `pre-commit` installiert.
         
 ## Aufgabe 4
 Erklären Sie hier, wie Sie das Passwort aus Ihrer lokalen `.env` auf Azure übertragen.
+
+Damit der Login auch auf Azure funktioniert, muss die Umgebungsvariable PASSWORD
+manuell als App-Einstellung in Azure hinterlegt werden.
+
+1. Im Azure-Portal die Web-App öffnen.
+2. Links im Menü Settings Environment variables wählen.
+3. Add klicken, Name PASSWORD, Wert eintragen.
+4. Mit Apply/Save speichern, die Web-App startet danach neu.
